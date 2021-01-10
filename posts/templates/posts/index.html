@@ -42,26 +42,28 @@
               </form>
             </div>
           </nav>
-          <div>
-        <!-- <h1>ようこそブログへ</h1> -->
 
-        <h2>さいしんのとうこう</h2>
+          <div class="container">
+            <!-- <h1>ようこそブログへ</h1> -->
 
-        {% for post in posts.all %}
-            
-            <a href ="{% url 'post_detail' post.id %}">{{ post.title }}</a>
-            <br /><br />
-            {{ post.published }}
-            <br /><br />
-            <img src="{{ post.image.url }}" />
-            {{ post.summary }}
-            <br /><br />
+            <h2>さいしんのとうこう</h2>
 
-        {% endfor %}
-        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
-    </div>
+            {% for post in posts.all %}
+                
+                <a href ="{% url 'post_detail' post.id %}">{{ post.title }}</a>
+                <br /><br />
+                {{ post.published }}
+                <br /><br />
+                <img src="{{ post.image.url }}" class="img-fluid rounded" />
+                {{ post.summary }}
+                <br /><br />
+
+            {% endfor %}
+
+            <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+            <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+            <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+          </div>
     </body>
     
 </html>
